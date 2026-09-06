@@ -50,7 +50,7 @@ export default function Home() {
             <a
               key={c.email}
               href={`mailto:${c.email}`}
-              className="bg-paper p-6 transition duration-200 hover:-translate-y-1 hover:bg-ocre"
+              className="contact-card bg-paper p-6 transition duration-200 hover:-translate-y-1 hover:bg-ocre"
             >
               <p className="font-display text-sm tracking-[0.16em] uppercase opacity-50">
                 {c.role}
