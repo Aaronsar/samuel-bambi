@@ -4,15 +4,17 @@ export default function Hero() {
   return (
     <section id="top" className="poster">
       <div className="poster-full">
-        <Image
-          src="/photos/affiche.jpg"
-          alt="Affiche du spectacle Machine — Samuel Bambi"
-          width={787}
-          height={1181}
-          priority
-          sizes="(max-width: 600px) 100vw, 540px"
-          className="poster-full-img"
-        />
+        <div className="poster-frame">
+          <Image
+            src="/photos/affiche.jpg"
+            alt="Affiche du spectacle Machine — Samuel Bambi"
+            width={787}
+            height={1181}
+            priority
+            sizes="300px"
+            className="poster-full-img"
+          />
+        </div>
         <div className="poster-actions">
           <a href="#dates" className="ticket text-lg">
             Réserver

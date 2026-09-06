@@ -279,14 +279,21 @@ a.ticket.ticket-ghost-light:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 1rem 2rem;
+  padding: 0.6rem 1rem 0.85rem;
+}
+
+.poster-frame {
+  width: min(92vw, 300px);
+  max-height: min(50vh, 440px);
 }
 
 .poster-full-img {
-  width: min(100%, 540px);
+  width: 100%;
   height: auto;
+  max-height: min(50vh, 440px);
+  object-fit: contain;
   display: block;
-  box-shadow: 10px 14px 0 var(--ink);
+  box-shadow: 8px 10px 0 var(--ink);
 }
 
 .poster-actions {
@@ -294,13 +301,13 @@ a.ticket.ticket-ghost-light:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.7rem;
-  margin-top: 1.4rem;
+  margin-top: 0.75rem;
 }
 
 .poster-sticker {
   position: absolute;
-  right: max(1rem, calc(50% - 340px));
-  top: 18%;
+  right: max(1rem, calc(50% - 210px));
+  top: 12%;
   z-index: 4;
   width: clamp(92px, 14vw, 148px);
   height: clamp(92px, 14vw, 148px);
