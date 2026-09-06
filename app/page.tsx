@@ -1,14 +1,9 @@
-import Image from "next/image";
 import DatesList from "@/components/DatesList";
 import Hero from "@/components/Hero";
 import InstaRail from "@/components/InstaRail";
+import PhotosWall from "@/components/PhotosWall";
 import SpectacleBlock from "@/components/SpectacleBlock";
-import {
-  bookingUrl,
-  contacts,
-  photos,
-  tiktokUrl,
-} from "@/lib/content";
+import { bookingUrl, contacts, tiktokUrl } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -21,27 +16,7 @@ export default function Home() {
 
       <SpectacleBlock />
 
-      <section id="photos" className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-24">
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <h2 className="font-display text-[clamp(3rem,8vw,6rem)] leading-[0.85]">
-            En images
-          </h2>
-          <p className="text-sm opacity-60">Photos © David Djian</p>
-        </div>
-        <div className="photo-grid">
-          {photos.map((photo) => (
-            <figure key={photo.src} className="relative min-h-[280px] overflow-hidden bg-paper-2">
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="(max-width: 800px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </figure>
-          ))}
-        </div>
-      </section>
+      <PhotosWall />
 
       <section id="insta" className="border-y-2 border-ink bg-paper-2">
         <div className="mx-auto max-w-[1400px] px-4 py-12 md:px-8 md:py-16">

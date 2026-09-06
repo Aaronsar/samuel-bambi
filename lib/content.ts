@@ -336,29 +336,40 @@ export const dates: ShowDate[] = [
 
 export const photos = [
   {
+    src: "/photos/hero.jpg",
+    alt: "Samuel Bambi, chemise rayée sur fond ocre, en pied",
+    width: 1200,
+    height: 2250,
+  },
+  {
     src: "/photos/portrait.jpg",
     alt: "Samuel Bambi, portrait chemise blanche",
-    className: "span-2",
+    width: 1100,
+    height: 1100,
   },
   {
     src: "/photos/denim.jpg",
     alt: "Samuel Bambi en veste en jean",
-    className: "",
+    width: 1100,
+    height: 1100,
   },
   {
     src: "/photos/trophee.jpg",
     alt: "Samuel Bambi avec le trophée de Danse avec les stars",
-    className: "",
+    width: 1100,
+    height: 1100,
   },
   {
     src: "/photos/chaise.jpg",
     alt: "Samuel Bambi assis sur une chaise",
-    className: "",
+    width: 1100,
+    height: 1100,
   },
   {
     src: "/photos/ocre.jpg",
     alt: "Samuel Bambi, chemise rayée sur fond ocre",
-    className: "",
+    width: 1100,
+    height: 1100,
   },
 ];
 
