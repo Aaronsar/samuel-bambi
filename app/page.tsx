@@ -17,7 +17,7 @@ export default function Home() {
     <main id="top">
       <section className="relative overflow-hidden bg-[#c7a05e]">
         <div className="mx-auto grid min-h-[calc(100svh-64px)] max-w-[1500px] lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="relative z-10 flex flex-col justify-end px-4 py-10 md:px-8 md:py-14 lg:py-16">
+          <div className="relative z-10 order-2 flex flex-col justify-end px-4 py-10 md:px-8 md:py-14 lg:order-1 lg:py-16">
             <p className="font-display text-sm tracking-[0.22em] uppercase md:text-base">
               Very Good Show · Pan Pan Production
             </p>
@@ -46,7 +46,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative min-h-[54vh] lg:min-h-[calc(100svh-64px)]">
+          <div className="relative order-1 min-h-[54vh] lg:order-2 lg:min-h-[calc(100svh-64px)]">
             <Image
               src="/photos/hero.jpg"
               alt="Samuel Bambi, sourire, chemise rayée"
