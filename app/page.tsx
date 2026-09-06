@@ -4,33 +4,16 @@ import Hero from "@/components/Hero";
 import {
   bookingUrl,
   contacts,
-  dates,
   instagramPosts,
   instagramUrl,
   photos,
   tiktokUrl,
 } from "@/lib/content";
 
-const cities = Array.from(new Set(dates.map((d) => d.city.toUpperCase())));
-
 export default function Home() {
   return (
     <main>
       <Hero />
-
-      <div className="marquee" aria-hidden="true">
-        <div className="marquee-track">
-          {[0, 1].map((copy) => (
-            <span key={copy}>
-              {cities.map((city) => (
-                <span key={`${copy}-${city}`} className="px-4">
-                  {city} ★
-                </span>
-              ))}
-            </span>
-          ))}
-        </div>
-      </div>
 
       <section id="dates" className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-24">
         <DatesList />
