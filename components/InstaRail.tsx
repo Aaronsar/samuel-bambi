@@ -57,7 +57,7 @@ export default function InstaRail() {
               src={post.src}
               alt={post.alt}
               fill
-              sizes="300px"
+              sizes="230px"
               className="object-cover"
             />
             <span aria-hidden="true">★</span>

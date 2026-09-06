@@ -498,8 +498,10 @@ a.ticket.ticket-ghost-light:hover {
 
 .insta-card {
   position: relative;
-  flex: 0 0 min(72vw, 300px);
-  aspect-ratio: 4 / 5;
+  flex: 0 0 min(58vw, 230px);
+  width: min(58vw, 230px);
+  height: 420px;
+  aspect-ratio: auto;
   background: var(--ink);
   border: 6px solid var(--paper);
   box-shadow: 8px 10px 0 var(--ink);
@@ -789,7 +791,7 @@ a.ticket.ticket-ghost-light:hover {
   height: 18px;
   background: color-mix(in srgb, var(--ocre) 70%, var(--paper));
   opacity: 0;
-  transition: opacity 0.4s ease 0.7s;
+  transition: opacity 0.7s ease 1.8s;
 }
 
 .affiche-tape-tl {
