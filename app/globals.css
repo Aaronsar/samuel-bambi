@@ -494,6 +494,7 @@ a.ticket.ticket-ghost-light:hover {
 
 .insta-rail {
   display: flex;
+  align-items: flex-start;
   gap: 1rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -508,16 +509,22 @@ a.ticket.ticket-ghost-light:hover {
 
 .insta-card {
   position: relative;
-  flex: 0 0 min(70vw, 300px);
-  width: min(70vw, 300px);
-  height: 420px;
-  aspect-ratio: auto;
+  flex: 0 0 min(70vw, 280px);
+  width: min(70vw, 280px);
+  height: auto;
+  display: block;
   background: var(--ink);
   border: 6px solid var(--paper);
   box-shadow: 8px 10px 0 var(--ink);
   overflow: hidden;
   transform: rotate(-1.6deg);
   animation: insta-wobble 4.6s ease-in-out infinite;
+}
+
+.insta-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .insta-card:nth-child(even) {
@@ -540,18 +547,10 @@ a.ticket.ticket-ghost-light:hover {
   text-shadow: 1px 1px 0 var(--paper);
 }
 
-.insta-card img {
-  transition: transform 0.45s ease;
-}
-
 .insta-card:hover {
   z-index: 2;
   transform: translateY(-8px) rotate(-0.4deg);
   animation: none;
-}
-
-.insta-card:hover img {
-  transform: scale(1.07);
 }
 
 @keyframes insta-wobble {

@@ -56,9 +56,10 @@ export default function InstaRail() {
             <Image
               src={post.src}
               alt={post.alt}
-              fill
+              width={post.width}
+              height={post.height}
               sizes="300px"
-              className="object-cover"
+              className="insta-card-img"
             />
             <span aria-hidden="true">★</span>
           </a>
