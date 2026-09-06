@@ -201,6 +201,7 @@ a {
   gap: 4px;
   background: var(--ink);
   padding: 4px;
+  align-items: start;
 }
 
 .lookbook-lead,
@@ -217,6 +218,15 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 50% 10%;
+}
+
+.lookbook-pack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  align-items: start;
+  align-content: start;
 }
 
 .lookbook-lead figcaption,
@@ -231,12 +241,6 @@ a {
   color: var(--ink);
   background: var(--paper);
   padding: 0.12rem 0.32rem 0.02rem;
-}
-
-.lookbook-pack {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
 }
 
 .lookbook-stamp {
@@ -265,16 +269,16 @@ a {
 
 @media (min-width: 800px) {
   .lookbook-sheet {
-    grid-template-columns: 0.82fr 1.18fr;
-    min-height: min(86vh, 920px);
+    grid-template-columns: 0.9fr 1.1fr;
   }
 
   .lookbook-lead {
-    min-height: 100%;
+    aspect-ratio: 2 / 3;
   }
 
-  .lookbook-pack {
-    grid-template-rows: 1fr 1fr 1fr;
+  .lookbook-pack figure,
+  .lookbook-stamp {
+    aspect-ratio: 1;
   }
 }
 
@@ -724,6 +728,17 @@ a.ticket.ticket-ghost-light:hover {
 
 .journal-sum button:hover {
   color: var(--red);
+}
+
+@media (max-width: 1023px) {
+  .journal-sum,
+  .journal-account {
+    display: none;
+  }
+
+  .journal-side {
+    justify-content: center;
+  }
 }
 
 @media (min-width: 1024px) {

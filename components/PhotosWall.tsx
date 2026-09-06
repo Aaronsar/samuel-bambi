@@ -19,6 +19,7 @@ export default function PhotosWall() {
             alt={lead.alt}
             fill
             sizes="(max-width: 800px) 100vw, 42vw"
+            style={{ objectPosition: "50% 12%" }}
           />
           <figcaption>01</figcaption>
         </figure>
@@ -31,6 +32,7 @@ export default function PhotosWall() {
                 alt={photo.alt}
                 fill
                 sizes="(max-width: 800px) 50vw, 28vw"
+                style={{ objectPosition: "50% 8%" }}
               />
               <figcaption>{String(i + 2).padStart(2, "0")}</figcaption>
             </figure>

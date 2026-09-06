@@ -90,7 +90,7 @@ export default function InstaJournal() {
           href={instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="ticket ticket-ghost"
+          className="ticket ticket-ghost journal-account"
         >
           Le compte
         </a>
