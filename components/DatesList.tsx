@@ -149,7 +149,7 @@ export default function DatesList() {
                             rel="noopener noreferrer"
                             className="ticket text-sm md:text-base"
                           >
-                            Une place
+                            Réserver
                           </a>
                         )}
                       </div>
