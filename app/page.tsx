@@ -1,5 +1,6 @@
 import Image from "next/image";
 import DatesList from "@/components/DatesList";
+import Hero from "@/components/Hero";
 import {
   bookingUrl,
   contacts,
@@ -14,53 +15,8 @@ const cities = Array.from(new Set(dates.map((d) => d.city.toUpperCase())));
 
 export default function Home() {
   return (
-    <main id="top">
-      <section className="relative overflow-hidden bg-[#c7a05e]">
-        <div className="mx-auto grid min-h-[calc(100svh-64px)] max-w-[1500px] lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="relative z-10 order-2 flex flex-col justify-end px-4 py-10 md:px-8 md:py-14 lg:order-1 lg:py-16">
-            <p className="font-display text-sm tracking-[0.22em] uppercase md:text-base">
-              Very Good Show · Pan Pan Production
-            </p>
-            <h1 className="font-display mt-3 text-[clamp(3.4rem,12vw,8.5rem)] leading-[0.82] tracking-[0.02em]">
-              Samuel
-              <br />
-              Bambi
-            </h1>
-            <p className="font-poster mt-2 text-[clamp(3.2rem,11vw,8rem)] leading-[0.85] text-paper">
-              MACHINE!
-            </p>
-            <p className="font-serif mt-5 max-w-lg text-xl italic leading-snug md:text-[1.65rem]">
-              « Un cœur qui bat sous ce corps imberbe. »
-            </p>
-            <p className="mt-4 max-w-md text-[0.95rem] leading-relaxed md:text-base">
-              La dernière fois, complet en 40 min. Là vous prenez votre temps.
-              J’aime pas trop le délire.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a href="#dates" className="ticket text-lg">
-                Voir les dates
-              </a>
-              <a href="#spectacle" className="ticket ticket-ghost text-lg">
-                Le spectacle
-              </a>
-            </div>
-          </div>
-
-          <div className="relative order-1 min-h-[54vh] lg:order-2 lg:min-h-[calc(100svh-64px)]">
-            <Image
-              src="/photos/hero.jpg"
-              alt="Samuel Bambi, sourire, chemise rayée"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-[50%_12%]"
-            />
-            <p className="font-display absolute right-4 bottom-4 bg-ink px-3 py-1 text-sm tracking-[0.16em] text-paper uppercase">
-              En tournée 26 · 27
-            </p>
-          </div>
-        </div>
-      </section>
+    <main>
+      <Hero />
 
       <div className="marquee" aria-hidden="true">
         <div className="marquee-track">
@@ -77,24 +33,12 @@ export default function Home() {
       </div>
 
       <section id="dates" className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-24">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="font-display text-sm tracking-[0.2em] text-red uppercase">Tournée</p>
-            <h2 className="font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.85]">
-              Les dates
-            </h2>
-          </div>
-          <p className="max-w-xs text-sm leading-relaxed opacity-70">
-            {dates.length} salles. Lille est déjà complet. Le reste, c’est
-            maintenant ou jamais.
-          </p>
-        </div>
         <DatesList />
       </section>
 
       <section id="spectacle" className="bg-ink text-paper">
         <div className="mx-auto grid max-w-[1400px] items-stretch gap-0 lg:grid-cols-2">
-          <div className="relative min-h-[70vh] overflow-hidden">
+          <div className="affiche-frame relative min-h-[70vh] overflow-hidden">
             <Image
               src="/photos/affiche.jpg"
               alt="Affiche du spectacle Machine, photos David Djian"
@@ -185,7 +129,7 @@ export default function Home() {
                   alt={post.alt}
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                  className="object-cover transition duration-500 group-hover:scale-[1.06]"
                 />
               </a>
             ))}
@@ -211,7 +155,7 @@ export default function Home() {
             <a
               key={c.email}
               href={`mailto:${c.email}`}
-              className="bg-paper p-6 transition hover:bg-ocre"
+              className="bg-paper p-6 transition duration-200 hover:-translate-y-1 hover:bg-ocre"
             >
               <p className="font-display text-sm tracking-[0.16em] uppercase opacity-50">
                 {c.role}

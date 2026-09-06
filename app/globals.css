@@ -123,8 +123,12 @@ a {
 .marquee-track {
   display: inline-flex;
   gap: 2.5rem;
-  animation: marquee 42s linear infinite;
+  animation: marquee 22s linear infinite;
   padding: 0.7rem 0;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }
 
 .marquee-track span {
@@ -164,6 +168,14 @@ a {
 .photo-grid figure:nth-child(4),
 .photo-grid figure:nth-child(5) {
   grid-column: span 6;
+}
+
+.photo-grid figure img {
+  transition: transform 0.7s ease;
+}
+
+.photo-grid figure:hover img {
+  transform: scale(1.06);
 }
 
 @media (max-width: 800px) {
@@ -216,6 +228,17 @@ a {
   color: var(--paper);
 }
 
+a.ticket.ticket-ghost-light {
+  background: transparent;
+  color: var(--paper);
+  box-shadow: inset 0 0 0 2px var(--paper);
+}
+
+a.ticket.ticket-ghost-light:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
 .dates-row {
   display: grid;
   grid-template-columns: 7.5rem 1fr auto;
@@ -244,5 +267,416 @@ a {
 
   .dates-row .cta {
     grid-area: cta;
+  }
+}
+
+.poster {
+  background: var(--paper);
+  position: relative;
+}
+
+.poster-top {
+  padding: 1.4rem 1rem 0.6rem;
+  text-align: center;
+}
+
+.poster-kicker {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(0.78rem, 1.6vw, 1rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.poster-stars {
+  display: block;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.55em;
+  animation: star-pulse 2.4s ease-in-out infinite;
+}
+
+.poster-name {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(4.4rem, 18vw, 11.5rem);
+  line-height: 0.78;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin: 0.35rem auto 0;
+  max-width: 16ch;
+  text-shadow: 3px 4px 0 color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.poster-name span {
+  display: block;
+}
+
+.poster-shot {
+  position: relative;
+  min-height: min(68vh, 760px);
+  overflow: hidden;
+  clip-path: polygon(
+    0 3.2%,
+    7% 0.4%,
+    14% 2.8%,
+    22% 0%,
+    31% 2.4%,
+    41% 0.3%,
+    52% 2.6%,
+    62% 0%,
+    73% 2.2%,
+    84% 0.2%,
+    92% 2.4%,
+    100% 0.6%,
+    100% 97.2%,
+    91% 100%,
+    82% 97.4%,
+    72% 100%,
+    61% 97.6%,
+    50% 100%,
+    39% 97.5%,
+    28% 100%,
+    17% 97.6%,
+    8% 100%,
+    0 97.4%
+  );
+}
+
+.poster-photo {
+  object-fit: cover;
+  object-position: 50% 30%;
+  transform-origin: 50% 28%;
+  animation: kenburns 22s ease-in-out infinite alternate;
+}
+
+.poster-shot-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--paper) 55%, transparent) 0%,
+      transparent 18%,
+      transparent 42%,
+      color-mix(in srgb, var(--ink) 78%, transparent) 100%
+    );
+  pointer-events: none;
+}
+
+.poster-shot-copy {
+  position: absolute;
+  inset: auto 0 14%;
+  z-index: 2;
+  padding: 0 1rem;
+  text-align: center;
+  color: var(--paper);
+}
+
+.poster-machine {
+  font-family: var(--font-anton), sans-serif;
+  font-size: clamp(3.6rem, 14vw, 9.5rem);
+  line-height: 0.82;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ocre);
+  text-shadow: 3px 4px 0 var(--ink);
+  animation: machine-jitter 3.2s steps(2, end) infinite;
+}
+
+.poster-machine span {
+  display: inline-block;
+  color: var(--red);
+}
+
+.poster-tag {
+  font-family: var(--font-bebas), sans-serif;
+  margin-top: 0.35rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.poster-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.poster-sticker {
+  position: absolute;
+  right: 5%;
+  top: 36%;
+  z-index: 4;
+  width: clamp(92px, 14vw, 148px);
+  height: clamp(92px, 14vw, 148px);
+  overflow: hidden;
+  border: 5px solid var(--paper);
+  box-shadow: 8px 10px 0 var(--ink);
+  transform: rotate(9deg);
+  animation: sticker-tilt 5s ease-in-out infinite;
+}
+
+.poster-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem 1.1rem;
+  padding: 0.85rem 1rem;
+  background: var(--paper);
+  color: var(--red);
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(1.35rem, 4.4vw, 2.6rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.poster-strip span {
+  color: var(--ink);
+}
+
+.dates-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.dates-all {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.28em;
+}
+
+.dates-all:hover {
+  color: var(--red-dark);
+}
+
+.dates-preview {
+  position: relative;
+}
+
+.dates-nav {
+  display: none;
+}
+
+.dates-rail {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.4rem 0 1.2rem;
+}
+
+.dates-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.date-card {
+  flex: 0 0 min(78vw, 270px);
+  scroll-snap-align: start;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  padding: 1.15rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-height: 220px;
+  box-shadow: 6px 7px 0 color-mix(in srgb, var(--ink) 12%, transparent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.date-card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 8px 12px 0 color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.date-card time {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.date-card h3 {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 2.15rem;
+  line-height: 0.9;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.date-card p {
+  font-size: 0.86rem;
+  opacity: 0.7;
+  flex: 1;
+}
+
+.date-card .ticket,
+.date-card-sold {
+  margin-top: 0.6rem;
+  align-self: flex-start;
+}
+
+.date-card-sold {
+  font-family: var(--font-bebas), sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--ink);
+  padding: 0.7rem 1.1rem;
+  opacity: 0.5;
+}
+
+.date-card-featured {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.date-card-featured time {
+  color: var(--ocre);
+}
+
+.date-card-featured p {
+  opacity: 0.7;
+}
+
+.date-card-featured .ticket {
+  background: var(--red);
+}
+
+.affiche-frame {
+  clip-path: polygon(
+    0 1.6%,
+    8% 0,
+    18% 1.8%,
+    32% 0.3%,
+    48% 1.6%,
+    64% 0,
+    78% 1.8%,
+    90% 0.2%,
+    100% 1.4%,
+    100% 100%,
+    0 100%
+  );
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(0, -1.2%, 0);
+  }
+}
+
+@keyframes machine-jitter {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-1.1deg);
+  }
+  40% {
+    transform: translate3d(-1px, 1px, 0) rotate(-0.6deg);
+  }
+  70% {
+    transform: translate3d(1px, -1px, 0) rotate(-1.4deg);
+  }
+}
+
+@keyframes sticker-tilt {
+  0%,
+  100% {
+    transform: rotate(9deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(5deg) translate3d(0, -6px, 0);
+  }
+}
+
+@keyframes star-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.08);
+  }
+}
+
+@media (min-width: 800px) {
+  .poster-top {
+    padding: 1.8rem 1.5rem 0.8rem;
+  }
+
+  .dates-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .dates-nav button {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .dates-nav button:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
+
+@media (max-width: 700px) {
+  .poster-sticker {
+    display: none;
+  }
+
+  .poster-shot {
+    min-height: 52vh;
+  }
+
+  .poster-photo {
+    object-position: 50% 36%;
+  }
+
+  .poster-shot-copy {
+    inset: auto 0 12%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .poster-photo,
+  .poster-machine,
+  .poster-sticker,
+  .poster-stars {
+    animation: none;
+  }
+
+  .date-card:hover,
+  .photo-grid figure:hover img {
+    transform: none;
   }
 }
