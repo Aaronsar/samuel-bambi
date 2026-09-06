@@ -488,7 +488,7 @@ a.ticket.ticket-ghost-light:hover {
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  padding: 1.1rem 0.4rem 1.6rem;
+  padding: 1.4rem 0.5rem 2rem;
   cursor: grab;
 }
 
@@ -498,11 +498,11 @@ a.ticket.ticket-ghost-light:hover {
 
 .insta-card {
   position: relative;
-  flex: 0 0 min(58vw, 200px);
+  flex: 0 0 min(72vw, 300px);
   aspect-ratio: 4 / 5;
   background: var(--ink);
-  border: 5px solid var(--paper);
-  box-shadow: 7px 9px 0 var(--ink);
+  border: 6px solid var(--paper);
+  box-shadow: 8px 10px 0 var(--ink);
   overflow: hidden;
   transform: rotate(-1.6deg);
   animation: insta-wobble 4.6s ease-in-out infinite;
