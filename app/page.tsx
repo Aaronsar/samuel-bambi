@@ -2,6 +2,7 @@ import Image from "next/image";
 import DatesList from "@/components/DatesList";
 import Hero from "@/components/Hero";
 import InstaRail from "@/components/InstaRail";
+import SpectacleBlock from "@/components/SpectacleBlock";
 import {
   bookingUrl,
   contacts,
@@ -18,43 +19,7 @@ export default function Home() {
         <DatesList />
       </section>
 
-      <section id="spectacle" className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-[1400px] items-center gap-0 lg:grid-cols-2">
-          <div className="flex justify-center bg-paper px-4 py-10 md:px-12 md:py-16">
-            <Image
-              src="/photos/affiche.jpg"
-              alt="Affiche du spectacle Machine, photos David Djian"
-              width={787}
-              height={1181}
-              sizes="(max-width: 1024px) 90vw, 420px"
-              className="h-auto w-full max-w-[420px]"
-            />
-          </div>
-          <div className="flex flex-col justify-center px-4 py-14 md:px-12 md:py-20">
-            <p className="font-display text-sm tracking-[0.22em] text-ocre uppercase">
-              Le spectacle
-            </p>
-            <h2 className="font-poster mt-2 text-[clamp(4rem,12vw,8rem)] leading-[0.85]">
-              MACHINE!
-            </h2>
-            <blockquote className="font-serif mt-6 max-w-xl text-2xl leading-snug italic md:text-[1.85rem]">
-              Si Samuel était une scène de film, il serait l’orchestre du Titanic
-              : celui qui continue de jouer pendant que le bateau coule.
-            </blockquote>
-            <p className="mt-6 max-w-xl text-[0.98rem] leading-relaxed opacity-80">
-              Stand-up, personnages, autodérision. Co-écrit avec Jonathan Demayo
-              et Benjamin Ifrah. Mis en scène par Nicolas Nebot. Une heure où ça
-              ne s’arrête pas — même après Danse avec les stars.
-            </p>
-            <p className="mt-4 text-sm opacity-55">
-              (Audacieux et hilarant. Cette phrase, c’est de lui.)
-            </p>
-            <a href="#dates" className="ticket mt-8 w-fit text-lg">
-              Je viens rire
-            </a>
-          </div>
-        </div>
-      </section>
+      <SpectacleBlock />
 
       <section id="photos" className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-24">
         <div className="mb-8 flex items-end justify-between gap-4">
