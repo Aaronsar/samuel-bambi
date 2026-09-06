@@ -146,208 +146,149 @@ a {
   }
 }
 
-.prints {
+.lookbook {
   background: var(--ink);
   color: var(--paper);
-  border-block: 2px solid var(--ink);
-  overflow: hidden;
 }
 
-.prints-inner {
-  position: relative;
+.lookbook-mast {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "kicker credit"
+    "title title";
+  align-items: end;
+  gap: 0.2rem 1rem;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2.2rem 1rem 2.8rem;
+  padding: 1.4rem 1rem 1rem;
 }
 
-.prints-kicker {
+.lookbook-kicker {
+  grid-area: kicker;
   font-family: var(--font-bebas), sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--red);
+  margin: 0;
 }
 
-.prints-title {
+.lookbook-credit {
+  grid-area: credit;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.7;
+}
+
+.lookbook-title {
+  grid-area: title;
   font-family: var(--font-anton), sans-serif;
-  font-size: clamp(3.4rem, 12vw, 8.5rem);
+  font-size: clamp(2.8rem, 10vw, 6.4rem);
   line-height: 0.8;
   text-transform: uppercase;
   letter-spacing: 0.01em;
+  margin: 0;
   color: var(--paper);
   text-shadow: 4px 5px 0 var(--red);
-  margin: 0.2rem 0 0.4rem;
 }
 
-.prints-note {
-  font-family: var(--font-newsreader), Georgia, serif;
-  font-style: italic;
-  opacity: 0.55;
-  margin-bottom: 1.2rem;
+.lookbook-sheet {
+  display: grid;
+  gap: 4px;
+  background: var(--ink);
+  padding: 4px;
 }
 
-.prints-wall {
+.lookbook-lead,
+.lookbook-pack figure {
   position: relative;
-  min-height: min(88vw, 780px);
-}
-
-.print {
-  position: absolute;
-  z-index: 1;
   margin: 0;
-  background: var(--paper);
-  padding: 5px;
-  box-shadow: 7px 8px 0 var(--red);
-  transform-origin: center;
+  background: var(--paper-2);
+  overflow: hidden;
 }
 
-.print::before {
-  content: "";
-  position: absolute;
-  top: -7px;
-  left: 16%;
-  z-index: 2;
-  width: 46px;
-  height: 14px;
-  background: color-mix(in srgb, var(--ocre) 72%, var(--paper));
-  transform: rotate(-22deg);
-}
-
-.print img {
+.lookbook-lead img,
+.lookbook-pack img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
-.print figcaption {
+.lookbook-lead figcaption,
+.lookbook-pack figcaption {
   position: absolute;
-  left: 10px;
-  bottom: 10px;
+  left: 8px;
+  bottom: 8px;
   font-family: var(--font-bebas), sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   line-height: 1;
   letter-spacing: 0.06em;
   color: var(--ink);
   background: var(--paper);
-  padding: 0.15rem 0.35rem 0.05rem;
+  padding: 0.12rem 0.32rem 0.02rem;
 }
 
-.print:nth-child(1) {
-  left: 50%;
-  top: 0;
-  z-index: 4;
-  width: min(34vw, 290px);
-  transform: translateX(-50%) rotate(-2.4deg);
+.lookbook-pack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
 }
 
-.print:nth-child(1)::before {
-  left: auto;
-  right: 18%;
-  transform: rotate(16deg);
+.lookbook-stamp {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 0.9;
+  text-align: center;
+  padding: 1rem;
 }
 
-.print:nth-child(2) {
-  left: 2%;
-  top: 6%;
-  width: min(28vw, 240px);
-  transform: rotate(-8deg);
+.lookbook-stamp span {
+  font-family: var(--font-anton), sans-serif;
+  font-size: 1.6em;
+  line-height: 0.8;
 }
 
-.print:nth-child(3) {
-  right: 3%;
-  top: 2%;
-  width: min(27vw, 230px);
-  transform: rotate(7deg);
-}
-
-.print:nth-child(3)::before {
-  left: auto;
-  right: 22%;
-  transform: rotate(24deg);
-}
-
-.print:nth-child(4) {
-  left: 8%;
-  bottom: 4%;
-  z-index: 5;
-  width: min(24vw, 210px);
-  transform: rotate(5.5deg);
-}
-
-.print:nth-child(5) {
-  right: 7%;
-  bottom: 3%;
-  width: min(26vw, 220px);
-  transform: rotate(-6deg);
-}
-
-.print:nth-child(6) {
-  right: 24%;
-  top: 46%;
-  z-index: 6;
-  width: min(22vw, 190px);
-  transform: rotate(11deg);
-}
-
-.print:hover {
-  z-index: 8;
-}
-
-@media (max-width: 800px) {
-  .prints-inner {
-    padding: 1.8rem 1rem 2.2rem;
+@media (min-width: 800px) {
+  .lookbook-sheet {
+    grid-template-columns: 0.82fr 1.18fr;
+    min-height: min(86vh, 920px);
   }
 
-  .prints-wall {
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 1.5rem;
+  .lookbook-lead {
+    min-height: 100%;
   }
 
-  .print {
-    position: relative;
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
-    width: min(78vw, 280px);
-    margin-top: -1.8rem;
+  .lookbook-pack {
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 799px) {
+  .lookbook-lead {
+    aspect-ratio: 3 / 4;
   }
 
-  .print:nth-child(1) {
-    width: min(62vw, 240px);
-    margin-top: 0;
-    transform: rotate(-2deg);
+  .lookbook-pack figure {
+    aspect-ratio: 1;
   }
 
-  .print:nth-child(2) {
-    align-self: flex-start;
-    margin-left: 2%;
-    transform: rotate(-7deg);
-  }
-
-  .print:nth-child(3) {
-    align-self: flex-end;
-    margin-right: 2%;
-    transform: rotate(6deg);
-  }
-
-  .print:nth-child(4) {
-    align-self: flex-start;
-    margin-left: 10%;
-    transform: rotate(4deg);
-  }
-
-  .print:nth-child(5) {
-    align-self: flex-end;
-    margin-right: 8%;
-    transform: rotate(-5deg);
-  }
-
-  .print:nth-child(6) {
-    transform: rotate(8deg);
+  .lookbook-stamp {
+    min-height: 140px;
   }
 }
 
