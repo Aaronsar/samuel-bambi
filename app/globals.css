@@ -308,7 +308,7 @@ a.ticket.ticket-ghost-light:hover {
 
 .poster-shot {
   position: relative;
-  min-height: min(38vh, 340px);
+  min-height: min(48vh, 460px);
   overflow: hidden;
   clip-path: polygon(
     0 3.2%,
@@ -629,7 +629,7 @@ a.ticket.ticket-ghost-light:hover {
   }
 
   .poster-shot {
-    min-height: 34vh;
+    min-height: 42vh;
   }
 
   .poster-shot-copy {
