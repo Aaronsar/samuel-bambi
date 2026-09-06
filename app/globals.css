@@ -1140,21 +1140,26 @@ a.ticket.ticket-ghost-light:hover {
 
 @keyframes contact-blink {
   0%,
-  20%,
+  22%,
   100% {
     background-color: var(--paper);
     color: var(--ink);
   }
-  7%,
-  14% {
+  6%,
+  16% {
     background-color: var(--red);
     color: var(--paper);
   }
 }
 
+.contact-role {
+  color: var(--ink);
+  opacity: 0.5;
+}
+
 @media (max-width: 799px) {
   .contact-card {
-    animation: contact-blink 10.5s ease-in-out infinite;
+    animation: contact-blink 7.2s ease-in-out infinite;
   }
 
   .contact-card:nth-child(1) {
@@ -1162,11 +1167,16 @@ a.ticket.ticket-ghost-light:hover {
   }
 
   .contact-card:nth-child(2) {
-    animation-delay: 3.5s;
+    animation-delay: 2.4s;
   }
 
   .contact-card:nth-child(3) {
-    animation-delay: 7s;
+    animation-delay: 4.8s;
+  }
+
+  .contact-role {
+    color: #111;
+    opacity: 1;
   }
 }
 

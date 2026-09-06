@@ -52,7 +52,7 @@ export default function Home() {
               href={`mailto:${c.email}`}
               className="contact-card bg-paper p-6 transition duration-200 hover:-translate-y-1 hover:bg-ocre"
             >
-              <p className="font-display text-sm tracking-[0.16em] uppercase opacity-50">
+              <p className="contact-role font-display text-sm tracking-[0.16em] uppercase">
                 {c.role}
               </p>
               <p className="font-display mt-2 text-3xl leading-none">{c.name}</p>
