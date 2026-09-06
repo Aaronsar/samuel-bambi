@@ -1,7 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+
+const flaps = ["tl", "tr", "bl", "br"] as const;
 
 export default function SpectacleBlock() {
   const ref = useRef<HTMLDivElement>(null);
@@ -18,11 +19,11 @@ export default function SpectacleBlock() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setOpen(true);
+          requestAnimationFrame(() => setOpen(true));
           observer.disconnect();
         }
       },
-      { threshold: 0.28, rootMargin: "0px 0px -8% 0px" },
+      { threshold: 0.35, rootMargin: "0px 0px -10% 0px" },
     );
     observer.observe(node);
     return () => observer.disconnect();
@@ -31,20 +32,24 @@ export default function SpectacleBlock() {
   return (
     <section id="spectacle" className="spectacle">
       <div className="spectacle-inner">
-        <div ref={ref} className={`affiche-stage${open ? " is-open" : ""}`}>
-          <div className="affiche-ball">
-            <Image
-              src="/photos/affiche.jpg"
-              alt="Affiche du spectacle Machine, photos David Djian"
-              width={787}
-              height={1181}
-              sizes="(max-width: 1024px) 80vw, 380px"
-              className="affiche-img"
-            />
-            <span className="affiche-wrinkles" aria-hidden="true" />
-            <span className="affiche-tape affiche-tape-tl" aria-hidden="true" />
-            <span className="affiche-tape affiche-tape-br" aria-hidden="true" />
+        <div
+          ref={ref}
+          className={`affiche-stage${open ? " is-open" : ""}`}
+          role="img"
+          aria-label="Affiche du spectacle Machine, photos David Djian"
+        >
+          <div className="affiche-sheet">
+            {flaps.map((flap) => (
+              <div key={flap} className={`affiche-flap affiche-flap-${flap}`}>
+                <div className="affiche-flap-face">
+                  <span className="affiche-wrinkles" aria-hidden="true" />
+                </div>
+                <div className="affiche-flap-back" aria-hidden="true" />
+              </div>
+            ))}
           </div>
+          <span className="affiche-tape affiche-tape-tl" aria-hidden="true" />
+          <span className="affiche-tape affiche-tape-br" aria-hidden="true" />
         </div>
 
         <div className="spectacle-copy">

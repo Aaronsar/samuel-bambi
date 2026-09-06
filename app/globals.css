@@ -712,7 +712,7 @@ a.ticket.ticket-ghost-light:hover {
 .spectacle {
   background: var(--paper-2);
   border-block: 2px solid var(--ink);
-  overflow: hidden;
+  overflow: clip;
 }
 
 .spectacle-inner {
@@ -727,61 +727,136 @@ a.ticket.ticket-ghost-light:hover {
 .affiche-stage {
   display: flex;
   justify-content: center;
-  min-height: 420px;
-}
-
-.affiche-ball {
+  align-items: center;
+  min-height: 460px;
+  perspective: 1400px;
   position: relative;
-  width: min(100%, 380px);
-  transform: scale(0.42) rotate(-28deg);
-  border-radius: 48% 42% 50% 44%;
-  overflow: hidden;
-  box-shadow: 0 18px 0 color-mix(in srgb, var(--ink) 18%, transparent);
-  filter: contrast(1.45) saturate(0.65) brightness(0.82);
-  transition:
-    transform 2.6s cubic-bezier(0.22, 0.61, 0.36, 1),
-    border-radius 2.5s cubic-bezier(0.22, 0.61, 0.36, 1),
-    filter 2.5s ease,
-    box-shadow 2.2s ease;
 }
 
-.affiche-stage.is-open .affiche-ball {
-  transform: rotate(-2.4deg) scale(1);
-  border-radius: 0;
+.affiche-sheet {
+  width: min(92vw, 360px);
+  aspect-ratio: 787 / 1181;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  transform-style: preserve-3d;
+  transform: scale(0.55) rotateZ(-32deg) rotateX(28deg);
+  filter: contrast(1.25) saturate(0.75);
+  transition:
+    transform 2.8s cubic-bezier(0.2, 0.75, 0.2, 1),
+    filter 2.6s ease,
+    box-shadow 2.4s ease;
+}
+
+.affiche-stage.is-open .affiche-sheet {
+  transform: scale(1) rotateZ(-2.2deg) rotateX(0);
   filter: none;
   box-shadow: 10px 14px 0 var(--ink);
 }
 
-.affiche-img {
-  display: block;
-  width: 100%;
-  height: auto;
+.affiche-flap {
+  position: relative;
+  transform-style: preserve-3d;
+  overflow: visible;
+}
+
+.affiche-flap-tl {
+  transform-origin: 100% 100%;
+  transform: rotateX(118deg) rotateY(-102deg) rotateZ(16deg);
+  transition: transform 2.5s cubic-bezier(0.18, 0.7, 0.22, 1) 0.05s;
+}
+
+.affiche-flap-tr {
+  transform-origin: 0 100%;
+  transform: rotateX(112deg) rotateY(108deg) rotateZ(-14deg);
+  transition: transform 2.55s cubic-bezier(0.18, 0.7, 0.22, 1) 0.22s;
+}
+
+.affiche-flap-bl {
+  transform-origin: 100% 0;
+  transform: rotateX(-116deg) rotateY(-98deg) rotateZ(-18deg);
+  transition: transform 2.6s cubic-bezier(0.18, 0.7, 0.22, 1) 0.38s;
+}
+
+.affiche-flap-br {
+  transform-origin: 0 0;
+  transform: rotateX(-110deg) rotateY(104deg) rotateZ(12deg);
+  transition: transform 2.7s cubic-bezier(0.18, 0.7, 0.22, 1) 0.52s;
+}
+
+.affiche-stage.is-open .affiche-flap-tl,
+.affiche-stage.is-open .affiche-flap-tr,
+.affiche-stage.is-open .affiche-flap-bl,
+.affiche-stage.is-open .affiche-flap-br {
+  transform: none;
+}
+
+.affiche-flap-face,
+.affiche-flap-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.affiche-flap-face {
+  overflow: hidden;
+  background-image: url("/photos/affiche.jpg");
+  background-size: 200% 200%;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.affiche-flap-tl .affiche-flap-face {
+  background-position: 0 0;
+}
+
+.affiche-flap-tr .affiche-flap-face {
+  background-position: 100% 0;
+}
+
+.affiche-flap-bl .affiche-flap-face {
+  background-position: 0 100%;
+}
+
+.affiche-flap-br .affiche-flap-face {
+  background-position: 100% 100%;
+}
+
+.affiche-flap-back {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--paper) 0 18px,
+      color-mix(in srgb, var(--ink) 6%, var(--paper)) 18px 19px
+    ),
+    var(--paper);
+  transform: rotateY(180deg);
+  box-shadow: inset 0 0 28px color-mix(in srgb, var(--ink) 18%, transparent);
 }
 
 .affiche-wrinkles {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.72;
+  opacity: 0.8;
   mix-blend-mode: multiply;
   background:
     repeating-linear-gradient(
-      118deg,
-      transparent 0 11px,
-      color-mix(in srgb, var(--ink) 16%, transparent) 12px 13px
+      122deg,
+      transparent 0 9px,
+      color-mix(in srgb, var(--ink) 22%, transparent) 10px 11px
     ),
     repeating-linear-gradient(
-      28deg,
-      transparent 0 17px,
-      color-mix(in srgb, var(--ink) 12%, transparent) 18px 19px
+      34deg,
+      transparent 0 14px,
+      color-mix(in srgb, var(--ink) 16%, transparent) 15px 16px
     ),
-    radial-gradient(circle at 30% 24%, color-mix(in srgb, var(--ink) 22%, transparent), transparent 42%),
-    radial-gradient(circle at 74% 68%, color-mix(in srgb, var(--ink) 18%, transparent), transparent 38%);
-  transition: opacity 2.5s ease;
+    radial-gradient(circle at 28% 22%, color-mix(in srgb, var(--ink) 28%, transparent), transparent 46%);
+  transition: opacity 2.6s ease;
 }
 
 .affiche-stage.is-open .affiche-wrinkles {
-  opacity: 0.07;
+  opacity: 0.06;
 }
 
 .affiche-tape {
@@ -791,18 +866,18 @@ a.ticket.ticket-ghost-light:hover {
   height: 18px;
   background: color-mix(in srgb, var(--ocre) 70%, var(--paper));
   opacity: 0;
-  transition: opacity 0.7s ease 1.8s;
+  transition: opacity 0.7s ease 2.2s;
 }
 
 .affiche-tape-tl {
-  top: 10px;
-  left: -8px;
+  top: 18%;
+  left: 14%;
   transform: rotate(-32deg);
 }
 
 .affiche-tape-br {
-  right: -6px;
-  bottom: 22px;
+  right: 16%;
+  bottom: 14%;
   transform: rotate(18deg);
 }
 
@@ -832,11 +907,18 @@ a.ticket.ticket-ghost-light:hover {
     animation: none;
   }
 
-  .affiche-ball {
-    transform: rotate(-2.4deg) scale(1);
-    border-radius: 0;
+  .affiche-sheet,
+  .affiche-flap-tl,
+  .affiche-flap-tr,
+  .affiche-flap-bl,
+  .affiche-flap-br {
+    transform: none;
     filter: none;
     transition: none;
+  }
+
+  .affiche-stage.is-open .affiche-sheet {
+    transform: rotateZ(-2.2deg);
   }
 
   .affiche-wrinkles,
