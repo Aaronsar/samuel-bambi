@@ -645,78 +645,156 @@ a.ticket.ticket-ghost-light:hover {
   padding: 0.4rem 0 1.2rem;
 }
 
-.insta-wrap {
+.journal {
+  display: grid;
+  gap: 1.6rem;
+  align-items: start;
+}
+
+.journal-phone {
   position: relative;
-}
-
-.insta-rail {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  padding: 1.4rem 0.5rem 2rem;
-  cursor: grab;
-}
-
-.insta-rail::-webkit-scrollbar {
-  display: none;
-}
-
-.insta-card {
-  position: relative;
-  flex: 0 0 min(70vw, 280px);
-  width: min(70vw, 280px);
-  height: auto;
-  display: block;
+  width: min(72vw, 280px);
+  margin: 0 auto;
   background: var(--ink);
-  border: 6px solid var(--paper);
-  box-shadow: 8px 10px 0 var(--ink);
+  padding: 10px 8px 14px;
+  border-radius: 28px;
+  box-shadow: 8px 10px 0 var(--red);
+}
+
+.journal-progress {
+  display: flex;
+  gap: 3px;
+  padding: 4px 4px 8px;
+}
+
+.journal-progress span {
+  position: relative;
+  flex: 1;
+  height: 3px;
   overflow: hidden;
-  transform: rotate(-1.6deg);
-  animation: insta-wobble 4.6s ease-in-out infinite;
+  background: color-mix(in srgb, var(--paper) 28%, transparent);
 }
 
-.insta-card-img {
-  width: 100%;
-  height: auto;
+.journal-progress span.is-done {
+  background: var(--red);
+}
+
+.journal-progress span.is-on i {
   display: block;
+  height: 100%;
+  width: 0;
+  background: var(--red);
+  animation: journal-fill 4.5s linear forwards;
 }
 
-.insta-card:nth-child(even) {
-  transform: rotate(1.8deg);
-  animation-delay: -1.4s;
-}
-
-.insta-card:nth-child(3n) {
-  transform: rotate(-0.6deg);
-  animation-delay: -2.8s;
-}
-
-.insta-card span {
-  position: absolute;
-  top: 0.4rem;
-  right: 0.45rem;
-  z-index: 1;
-  color: var(--red);
-  font-size: 1.1rem;
-  text-shadow: 1px 1px 0 var(--paper);
-}
-
-.insta-card:hover {
-  z-index: 2;
-  transform: translateY(-8px) rotate(-0.4deg);
-  animation: none;
-}
-
-@keyframes insta-wobble {
-  0%,
-  100% {
-    translate: 0 0;
+@keyframes journal-fill {
+  to {
+    width: 100%;
   }
-  50% {
-    translate: 0 -5px;
+}
+
+.journal-screen {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: #0c0b09;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journal-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.journal-phone.is-paused .journal-progress span.is-on i {
+  animation-play-state: paused;
+}
+
+.journal-hit {
+  position: absolute;
+  top: 42px;
+  bottom: 36px;
+  width: 42%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.journal-hit-prev {
+  left: 8px;
+}
+
+.journal-hit-next {
+  right: 8px;
+}
+
+.journal-count {
+  font-family: var(--font-bebas), sans-serif;
+  text-align: center;
+  color: var(--paper);
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  margin-top: 0.45rem;
+}
+
+.journal-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.journal-sum {
+  flex: 1 1 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+
+.journal-sum button {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.55rem 0.1rem;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  background: transparent;
+  text-align: left;
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.journal-sum button span {
+  color: var(--red);
+  font-size: 0.85em;
+}
+
+.journal-sum button.is-on {
+  color: var(--red);
+}
+
+.journal-sum button:hover {
+  color: var(--red);
+}
+
+@media (min-width: 1024px) {
+  .journal {
+    grid-template-columns: minmax(240px, 280px) 1fr;
+    gap: 2.4rem;
+    align-items: center;
+  }
+
+  .journal-phone {
+    margin: 0;
+    transform: rotate(-1.4deg);
   }
 }
 
@@ -1068,9 +1146,13 @@ a.ticket.ticket-ghost-light:hover {
   .poster-photo,
   .poster-machine,
   .poster-sticker,
-  .poster-stars,
-  .insta-card {
+  .poster-stars {
     animation: none;
+  }
+
+  .journal-progress span.is-on i {
+    animation: none;
+    width: 100%;
   }
 
   .affiche-sheet,

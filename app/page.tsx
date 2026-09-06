@@ -1,6 +1,6 @@
 import DatesList from "@/components/DatesList";
 import Hero from "@/components/Hero";
-import InstaRail from "@/components/InstaRail";
+import InstaJournal from "@/components/InstaJournal";
 import PhotosWall from "@/components/PhotosWall";
 import SpectacleBlock from "@/components/SpectacleBlock";
 import { bookingUrl, contacts, tiktokUrl } from "@/lib/content";
@@ -24,11 +24,11 @@ export default function Home() {
             <p className="font-display text-sm tracking-[0.2em] text-red uppercase">
               Le vrai journal
             </p>
-            <h2 className="font-display text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.85]">
+            <h2 className="font-display text-[clamp(2.2rem,12vw,5.5rem)] leading-[0.85]">
               @samuelbambi
             </h2>
           </div>
-          <InstaRail />
+          <InstaJournal />
           <p className="mt-4 text-sm opacity-60">
             Coulisses, dates, et le reste. TikTok aussi :{" "}
             <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
