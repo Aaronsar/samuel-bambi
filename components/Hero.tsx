@@ -28,7 +28,8 @@ export default function Hero() {
             Machine
             <span aria-hidden="true">!</span>
           </p>
-          <p className="poster-tag">Un cœur qui bat sous ce corps imberbe</p>
+          <p className="poster-tag">« Un cœur qui bat sous ce corps imberbe. »</p>
+          <p className="poster-punch">Inarrêtable, audacieux et hilarant.</p>
           <div className="poster-actions">
             <a href="#dates" className="ticket">
               Réserver
