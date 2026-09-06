@@ -37,14 +37,15 @@ export default function Home() {
       </section>
 
       <section id="spectacle" className="bg-ink text-paper">
-        <div className="mx-auto grid max-w-[1400px] items-stretch gap-0 lg:grid-cols-2">
-          <div className="affiche-frame relative min-h-[70vh] overflow-hidden">
+        <div className="mx-auto grid max-w-[1400px] items-center gap-0 lg:grid-cols-2">
+          <div className="flex justify-center bg-paper px-4 py-10 md:px-12 md:py-16">
             <Image
               src="/photos/affiche.jpg"
               alt="Affiche du spectacle Machine, photos David Djian"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover object-top"
+              width={787}
+              height={1181}
+              sizes="(max-width: 1024px) 90vw, 420px"
+              className="h-auto w-full max-w-[420px]"
             />
           </div>
           <div className="flex flex-col justify-center px-4 py-14 md:px-12 md:py-20">

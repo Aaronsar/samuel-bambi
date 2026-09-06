@@ -275,125 +275,18 @@ a.ticket.ticket-ghost-light:hover {
   position: relative;
 }
 
-.poster-top {
-  padding: 1.4rem 1rem 0.6rem;
-  text-align: center;
+.poster-full {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 2rem;
 }
 
-.poster-kicker {
-  font-family: var(--font-bebas), sans-serif;
-  font-size: clamp(0.78rem, 1.6vw, 1rem);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--red);
-}
-
-.poster-stars {
+.poster-full-img {
+  width: min(100%, 540px);
+  height: auto;
   display: block;
-  margin-bottom: 0.35rem;
-  letter-spacing: 0.55em;
-  animation: star-pulse 2.4s ease-in-out infinite;
-}
-
-.poster-name {
-  font-family: var(--font-bebas), sans-serif;
-  font-size: clamp(4.4rem, 18vw, 11.5rem);
-  line-height: 0.78;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: var(--red);
-  margin: 0.35rem auto 0;
-  max-width: 16ch;
-  text-shadow: 3px 4px 0 color-mix(in srgb, var(--ink) 18%, transparent);
-}
-
-.poster-name span {
-  display: block;
-}
-
-.poster-shot {
-  position: relative;
-  min-height: min(68vh, 760px);
-  overflow: hidden;
-  clip-path: polygon(
-    0 3.2%,
-    7% 0.4%,
-    14% 2.8%,
-    22% 0%,
-    31% 2.4%,
-    41% 0.3%,
-    52% 2.6%,
-    62% 0%,
-    73% 2.2%,
-    84% 0.2%,
-    92% 2.4%,
-    100% 0.6%,
-    100% 97.2%,
-    91% 100%,
-    82% 97.4%,
-    72% 100%,
-    61% 97.6%,
-    50% 100%,
-    39% 97.5%,
-    28% 100%,
-    17% 97.6%,
-    8% 100%,
-    0 97.4%
-  );
-}
-
-.poster-photo {
-  object-fit: cover;
-  object-position: 50% 30%;
-  transform-origin: 50% 28%;
-  animation: kenburns 22s ease-in-out infinite alternate;
-}
-
-.poster-shot-shade {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      color-mix(in srgb, var(--paper) 55%, transparent) 0%,
-      transparent 18%,
-      transparent 42%,
-      color-mix(in srgb, var(--ink) 78%, transparent) 100%
-    );
-  pointer-events: none;
-}
-
-.poster-shot-copy {
-  position: absolute;
-  inset: auto 0 14%;
-  z-index: 2;
-  padding: 0 1rem;
-  text-align: center;
-  color: var(--paper);
-}
-
-.poster-machine {
-  font-family: var(--font-anton), sans-serif;
-  font-size: clamp(3.6rem, 14vw, 9.5rem);
-  line-height: 0.82;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--ocre);
-  text-shadow: 3px 4px 0 var(--ink);
-  animation: machine-jitter 3.2s steps(2, end) infinite;
-}
-
-.poster-machine span {
-  display: inline-block;
-  color: var(--red);
-}
-
-.poster-tag {
-  font-family: var(--font-bebas), sans-serif;
-  margin-top: 0.35rem;
-  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  box-shadow: 10px 14px 0 var(--ink);
 }
 
 .poster-actions {
@@ -401,13 +294,13 @@ a.ticket.ticket-ghost-light:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.7rem;
-  margin-top: 1.2rem;
+  margin-top: 1.4rem;
 }
 
 .poster-sticker {
   position: absolute;
-  right: 5%;
-  top: 36%;
+  right: max(1rem, calc(50% - 340px));
+  top: 18%;
   z-index: 4;
   width: clamp(92px, 14vw, 148px);
   height: clamp(92px, 14vw, 148px);
@@ -416,26 +309,6 @@ a.ticket.ticket-ghost-light:hover {
   box-shadow: 8px 10px 0 var(--ink);
   transform: rotate(9deg);
   animation: sticker-tilt 5s ease-in-out infinite;
-}
-
-.poster-strip {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem 1.1rem;
-  padding: 0.85rem 1rem;
-  background: var(--paper);
-  color: var(--red);
-  font-family: var(--font-bebas), sans-serif;
-  font-size: clamp(1.35rem, 4.4vw, 2.6rem);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-.poster-strip span {
-  color: var(--ink);
 }
 
 .dates-head {
@@ -560,44 +433,6 @@ a.ticket.ticket-ghost-light:hover {
   background: var(--red);
 }
 
-.affiche-frame {
-  clip-path: polygon(
-    0 1.6%,
-    8% 0,
-    18% 1.8%,
-    32% 0.3%,
-    48% 1.6%,
-    64% 0,
-    78% 1.8%,
-    90% 0.2%,
-    100% 1.4%,
-    100% 100%,
-    0 100%
-  );
-}
-
-@keyframes kenburns {
-  from {
-    transform: scale(1.04) translate3d(0, 0, 0);
-  }
-  to {
-    transform: scale(1.1) translate3d(0, -1.2%, 0);
-  }
-}
-
-@keyframes machine-jitter {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) rotate(-1.1deg);
-  }
-  40% {
-    transform: translate3d(-1px, 1px, 0) rotate(-0.6deg);
-  }
-  70% {
-    transform: translate3d(1px, -1px, 0) rotate(-1.4deg);
-  }
-}
-
 @keyframes sticker-tilt {
   0%,
   100% {
@@ -608,23 +443,7 @@ a.ticket.ticket-ghost-light:hover {
   }
 }
 
-@keyframes star-pulse {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.55;
-    transform: scale(1.08);
-  }
-}
-
 @media (min-width: 800px) {
-  .poster-top {
-    padding: 1.8rem 1.5rem 0.8rem;
-  }
-
   .dates-nav {
     display: flex;
     justify-content: flex-end;
@@ -652,26 +471,11 @@ a.ticket.ticket-ghost-light:hover {
   .poster-sticker {
     display: none;
   }
-
-  .poster-shot {
-    min-height: 52vh;
-  }
-
-  .poster-photo {
-    object-position: 50% 36%;
-  }
-
-  .poster-shot-copy {
-    inset: auto 0 12%;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track,
-  .poster-photo,
-  .poster-machine,
-  .poster-sticker,
-  .poster-stars {
+  .poster-sticker {
     animation: none;
   }
 
