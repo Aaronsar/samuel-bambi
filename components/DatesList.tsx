@@ -70,14 +70,9 @@ export default function DatesList() {
     <div>
       <div className="dates-head">
         <div>
-          <p className="font-display text-sm tracking-[0.2em] text-red uppercase">Tournée</p>
           <h2 className="font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.85]">
             En tournée
           </h2>
-          <p className="mt-2 max-w-sm text-sm leading-relaxed opacity-70">
-            {dates.length} salles. Lille est déjà complet. Le reste, c’est maintenant
-            ou jamais.
-          </p>
         </div>
         <button
           type="button"

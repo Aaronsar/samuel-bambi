@@ -283,16 +283,29 @@ a {
 }
 
 @media (max-width: 799px) {
-  .lookbook-lead {
-    aspect-ratio: 3 / 4;
+  .lookbook-mast {
+    padding: 0.9rem 1rem 0.55rem;
   }
 
+  .lookbook-title {
+    font-size: clamp(2.2rem, 12vw, 3rem);
+  }
+
+  .lookbook-sheet {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .lookbook-pack {
+    display: contents;
+  }
+
+  .lookbook-lead,
   .lookbook-pack figure {
     aspect-ratio: 1;
   }
 
   .lookbook-stamp {
-    min-height: 140px;
+    display: none;
   }
 }
 
@@ -531,9 +544,9 @@ a.ticket.ticket-ghost-light:hover {
   align-items: center;
   justify-content: center;
   gap: 0.5rem 0.9rem;
-  padding: 0.5rem 1rem;
-  background: var(--paper);
-  color: var(--red);
+  padding: 0.7rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
   font-family: var(--font-bebas), sans-serif;
   font-size: clamp(1.05rem, 3.2vw, 1.85rem);
   letter-spacing: 0.06em;
@@ -542,7 +555,19 @@ a.ticket.ticket-ghost-light:hover {
 }
 
 .poster-strip span {
-  color: var(--ink);
+  color: var(--red);
+}
+
+.dates {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.6rem 1rem 3.2rem;
+}
+
+@media (min-width: 800px) {
+  .dates {
+    padding: 2.2rem 2rem 4.5rem;
+  }
 }
 
 .dates-head {
@@ -1087,6 +1112,22 @@ a.ticket.ticket-ghost-light:hover {
 
 .spectacle-copy {
   color: var(--ink);
+}
+
+@media (max-width: 899px) {
+  .affiche-stage {
+    min-height: 0;
+    padding: 0.4rem 0 0.2rem;
+  }
+
+  .affiche-sheet {
+    width: min(48vw, 190px);
+  }
+
+  .spectacle-inner {
+    padding: 1.6rem 1rem 1.8rem;
+    gap: 1.15rem;
+  }
 }
 
 @media (min-width: 900px) {

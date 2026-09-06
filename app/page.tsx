@@ -10,7 +10,7 @@ export default function Home() {
     <main>
       <Hero />
 
-      <section id="dates" className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-24">
+      <section id="dates" className="dates">
         <DatesList />
       </section>
 
