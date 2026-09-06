@@ -478,8 +478,78 @@ a.ticket.ticket-ghost-light:hover {
   padding: 0.4rem 0 1.2rem;
 }
 
-.dates-rail::-webkit-scrollbar {
+.insta-wrap {
+  position: relative;
+}
+
+.insta-rail {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 1.1rem 0.4rem 1.6rem;
+  cursor: grab;
+}
+
+.insta-rail::-webkit-scrollbar {
   display: none;
+}
+
+.insta-card {
+  position: relative;
+  flex: 0 0 min(58vw, 200px);
+  aspect-ratio: 4 / 5;
+  background: var(--ink);
+  border: 5px solid var(--paper);
+  box-shadow: 7px 9px 0 var(--ink);
+  overflow: hidden;
+  transform: rotate(-1.6deg);
+  animation: insta-wobble 4.6s ease-in-out infinite;
+}
+
+.insta-card:nth-child(even) {
+  transform: rotate(1.8deg);
+  animation-delay: -1.4s;
+}
+
+.insta-card:nth-child(3n) {
+  transform: rotate(-0.6deg);
+  animation-delay: -2.8s;
+}
+
+.insta-card span {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.45rem;
+  z-index: 1;
+  color: var(--red);
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 0 var(--paper);
+}
+
+.insta-card img {
+  transition: transform 0.45s ease;
+}
+
+.insta-card:hover {
+  z-index: 2;
+  transform: translateY(-8px) rotate(-0.4deg);
+  animation: none;
+}
+
+.insta-card:hover img {
+  transform: scale(1.07);
+}
+
+@keyframes insta-wobble {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -5px;
+  }
 }
 
 .date-card {
@@ -642,7 +712,8 @@ a.ticket.ticket-ghost-light:hover {
   .poster-photo,
   .poster-machine,
   .poster-sticker,
-  .poster-stars {
+  .poster-stars,
+  .insta-card {
     animation: none;
   }
 

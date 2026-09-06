@@ -1,11 +1,10 @@
 import Image from "next/image";
 import DatesList from "@/components/DatesList";
 import Hero from "@/components/Hero";
+import InstaRail from "@/components/InstaRail";
 import {
   bookingUrl,
   contacts,
-  instagramPosts,
-  instagramUrl,
   photos,
   tiktokUrl,
 } from "@/lib/content";
@@ -80,45 +79,17 @@ export default function Home() {
       </section>
 
       <section id="insta" className="border-y-2 border-ink bg-paper-2">
-        <div className="mx-auto max-w-[1400px] px-4 py-16 md:px-8 md:py-20">
-          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="font-display text-sm tracking-[0.2em] text-red uppercase">
-                Le vrai journal
-              </p>
-              <h2 className="font-display text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.85]">
-                @samuelbambi
-              </h2>
-            </div>
-            <a
-              href={instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ticket ticket-ghost"
-            >
-              Ouvrir Instagram
-            </a>
+        <div className="mx-auto max-w-[1400px] px-4 py-12 md:px-8 md:py-16">
+          <div className="mb-6">
+            <p className="font-display text-sm tracking-[0.2em] text-red uppercase">
+              Le vrai journal
+            </p>
+            <h2 className="font-display text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.85]">
+              @samuelbambi
+            </h2>
           </div>
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3">
-            {instagramPosts.map((post) => (
-              <a
-                key={post.src}
-                href={post.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative aspect-[4/5] overflow-hidden bg-ink"
-              >
-                <Image
-                  src={post.src}
-                  alt={post.alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover transition duration-500 group-hover:scale-[1.06]"
-                />
-              </a>
-            ))}
-          </div>
-          <p className="mt-5 text-sm opacity-60">
+          <InstaRail />
+          <p className="mt-4 text-sm opacity-60">
             Coulisses, dates, et le reste. TikTok aussi :{" "}
             <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
               @samuelbambi
