@@ -364,34 +364,64 @@ export const photos = [
 
 export const instagramPosts = [
   {
-    src: "/instagram/3975029332803888659.jpg",
-    href: "https://www.instagram.com/p/DcteSQTE-Rs/",
-    alt: "Annonce Nice — Machine",
+    src: "/instagram/3978151864517574269.jpg",
+    href: "https://www.instagram.com/p/Dc1PAsrIL59/",
+    alt: "Publication Instagram de Samuel Bambi",
   },
   {
     src: "/instagram/3975967241883870316.jpg",
-    href: "https://www.instagram.com/p/Dc1PAsrIL59/",
-    alt: "Un dimanche à la campagne",
+    href: "https://www.instagram.com/p/DcteSQTE-Rs/",
+    alt: "Samuel Bambi — Un dimanche à la campagne",
+  },
+  {
+    src: "/instagram/3975029332803888659.jpg",
+    href: "https://www.instagram.com/p/DcqJB4ZiKYT/",
+    alt: "Samuel Bambi à Nice — Machine",
+  },
+  {
+    src: "/instagram/3967240589415769245.jpg",
+    href: "https://www.instagram.com/p/DcOeEv2o2Sd/",
+    alt: "Publication Instagram de Samuel Bambi",
+  },
+  {
+    src: "/instagram/3967744249384562967.jpg",
+    href: "https://www.instagram.com/p/DcQQl9wKnEX/",
+    alt: "Publication Instagram de Samuel Bambi",
+  },
+  {
+    src: "/instagram/3962164308766789681.jpg",
+    href: "https://www.instagram.com/p/Db8b3JFxpAx/",
+    alt: "Publication Instagram de Samuel Bambi",
   },
   {
     src: "/instagram/3896284451986521443.jpg",
     href: "https://www.instagram.com/p/DYSYhDQiL1j/",
-    alt: "Portrait studio",
+    alt: "Portrait studio de Samuel Bambi",
   },
   {
     src: "/instagram/3884709672410176515.jpg",
     href: "https://www.instagram.com/p/DXpQt1viFwD/",
-    alt: "Publication Instagram",
+    alt: "Publication Instagram de Samuel Bambi",
   },
   {
     src: "/instagram/3881070075927081418.jpg",
     href: "https://www.instagram.com/p/DXcVKvYCDHK/",
-    alt: "Publication Instagram",
+    alt: "Publication Instagram de Samuel Bambi",
   },
   {
     src: "/instagram/3878873329457170661.jpg",
     href: "https://www.instagram.com/p/DXUhr3zCAjl/",
-    alt: "Publication Instagram",
+    alt: "Publication Instagram de Samuel Bambi",
+  },
+  {
+    src: "/instagram/3877954677569996617.jpg",
+    href: "https://www.instagram.com/p/DXRQzujn8dJ/",
+    alt: "Publication Instagram de Samuel Bambi",
+  },
+  {
+    src: "/instagram/3877878988282831090.jpg",
+    href: "https://www.instagram.com/p/DXQ_mTajKDy/",
+    alt: "Publication Instagram de Samuel Bambi",
   },
 ];
 

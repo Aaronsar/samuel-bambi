@@ -34,8 +34,8 @@ export default function Footer() {
             ))}
           </ul>
           <div className="mt-5 flex gap-4 font-display text-lg tracking-widest uppercase">
-            <a href={instagramUrl} target="_blank" rel="noreferrer">Instagram</a>
-            <a href={tiktokUrl} target="_blank" rel="noreferrer">TikTok</a>
+            <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href={tiktokUrl} target="_blank" rel="noopener noreferrer">TikTok</a>
           </div>
         </div>
       </div>

@@ -80,7 +80,7 @@ export default function DatesList() {
                       <a
                         href={date.ticketUrl}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="ticket text-sm md:text-base"
                       >
                         Une place

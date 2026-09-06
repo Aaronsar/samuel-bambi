@@ -165,7 +165,7 @@ export default function Home() {
             <a
               href={instagramUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="ticket ticket-ghost"
             >
               Ouvrir Instagram
@@ -177,7 +177,7 @@ export default function Home() {
                 key={post.src}
                 href={post.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="group relative aspect-[4/5] overflow-hidden bg-ink"
               >
                 <Image
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
           <p className="mt-5 text-sm opacity-60">
             Coulisses, dates, et le reste. TikTok aussi :{" "}
-            <a href={tiktokUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4">
+            <a href={tiktokUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">
               @samuelbambi
             </a>
           </p>
@@ -223,7 +223,7 @@ export default function Home() {
             </a>
           ))}
         </div>
-        <a href={bookingUrl} target="_blank" rel="noreferrer" className="ticket mt-10 text-lg">
+        <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="ticket mt-10 text-lg">
           Billetterie officielle
         </a>
       </section>

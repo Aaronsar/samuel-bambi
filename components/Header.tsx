@@ -31,10 +31,10 @@ export default function Header() {
               {link.label}
             </a>
           ))}
-          <a href={instagramUrl} target="_blank" rel="noreferrer" className="font-display hidden text-[1.15rem] tracking-[0.08em] uppercase opacity-80 hover:opacity-100 xl:inline">
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer" className="font-display hidden text-[1.15rem] tracking-[0.08em] uppercase opacity-80 hover:opacity-100 xl:inline">
             @samuelbambi
           </a>
-          <a href={bookingUrl} target="_blank" rel="noreferrer" className="ticket text-[1.05rem]">
+          <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="ticket text-[1.05rem]">
             Places
           </a>
         </nav>
@@ -67,7 +67,7 @@ export default function Header() {
                 {link.label}
               </a>
             ))}
-            <a href={bookingUrl} target="_blank" rel="noreferrer" className="ticket mt-2 w-fit text-lg">
+            <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className="ticket mt-2 w-fit text-lg">
               Prendre une place
             </a>
           </div>
